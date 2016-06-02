@@ -19,5 +19,5 @@
         </table>
     }
 }
-@Html.PagedListPager(Model, page => Url.Action("AjaxPost", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { UpdateTargetId = "messages_block", InsertionMode = InsertionMode.Replace }))
+@Html.PagedListPager(Model, page => Url.Action("AjaxPost", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { UpdateTargetId = "messages_block" }))
 
