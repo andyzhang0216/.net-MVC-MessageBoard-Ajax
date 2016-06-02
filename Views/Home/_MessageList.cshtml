@@ -1,0 +1,23 @@
+﻿@model IPagedList<Messages>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <table class="message">
+            <tr>
+                <td>@item.Title</td>
+            </tr>
+            <tr>
+                <td>@item.Time.ToString("yyyy/MM/dd hh:mm")</td>
+            </tr>
+            <tr>
+                <td>
+                    @item.Content
+                </td>
+            </tr>
+        </table>
+    }
+}
+@Html.PagedListPager(Model, page => Url.Action("AjaxPost", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { UpdateTargetId = "messages_block", InsertionMode = InsertionMode.Replace }))
+
