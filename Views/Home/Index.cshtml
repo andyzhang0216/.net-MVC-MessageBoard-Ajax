@@ -6,7 +6,7 @@
 
 <div class="wrapper">
     <div id="form_block">
-        @using (Ajax.BeginForm("AjaxPost", "Home", new AjaxOptions { UpdateTargetId = "messages_block", InsertionMode = InsertionMode.Replace }))
+        @using (Ajax.BeginForm("AjaxPost", "Home", new AjaxOptions { UpdateTargetId = "messages_block" }))
         {
             <input type="text" name="title" placeholder="title" />
             <br />
