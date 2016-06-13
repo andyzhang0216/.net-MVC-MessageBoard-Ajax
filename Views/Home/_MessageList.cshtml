@@ -1,4 +1,4 @@
-﻿@model IPagedList<Messages>
+@model IPagedList<Messages>
 
 @if (Model != null)
 {
@@ -6,18 +6,17 @@
     {
         <table class="message">
             <tr>
-                <td>@item.Title</td>
+                <td class="title">@item.Title</td>
             </tr>
             <tr>
-                <td>@item.Time.ToString("yyyy/MM/dd hh:mm")</td>
+                <td class="time">@item.Time.ToString("yyyy/MM/dd hh:mm")</td>
             </tr>
             <tr>
-                <td>
+                <td class="content">
                     @item.Content
                 </td>
             </tr>
         </table>
     }
 }
-@Html.PagedListPager(Model, page => Url.Action("AjaxPost", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { UpdateTargetId = "messages_block" }))
-
+@Html.PagedListPager(Model, page => Url.Action("RenderPosts", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { UpdateTargetId = "messages_block" }))
