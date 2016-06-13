@@ -1,12 +1,7 @@
-@model IPagedList<Messages>
+@model Messages
 @section Scripts{
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-<script>
-    $("input[type=submit]").click(function () {
-        $("input[type=text]").val("");
-        $("textarea").val("");
-    });
-</script>
+
 }
 @section head {
 <link href="~/Content/Index.css" rel="stylesheet" />
@@ -17,9 +12,9 @@
     <div id="form_block">
         @using (Ajax.BeginForm("NewPost", "Home", new AjaxOptions { UpdateTargetId = "messages_block" }))
         {
-            <input type="text" name="title" placeholder="title" />
+            @Html.TextBoxFor(m => m.Title, new { placeholder = "title" })
             <br />
-            <textarea name="content" cols="60" rows="5" placeholder="content"></textarea>
+            @Html.TextAreaFor(m => m.Content, new { cols = "60", rows = "5", placeholder = "content" })
             <br />
             <input class="submit" type="submit" value="送出" />
         }
