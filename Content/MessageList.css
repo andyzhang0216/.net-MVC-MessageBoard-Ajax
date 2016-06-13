@@ -1,0 +1,24 @@
+.message {
+    width: 50%;
+    border: 1px solid #CCC;
+}
+
+.pagination-container
+{
+    width: 100%;
+    text-align: center;
+}
+
+.message td {
+    padding: 10px;
+}
+
+.message .title {
+    font-size: 1.2em;
+}
+.message .time {
+    color: #777;
+}
+.message .content {
+
+}
