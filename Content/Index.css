@@ -1,4 +1,4 @@
-﻿body {
+body {
     background-color: #E5E5E5;
 }
 .wrapper {
@@ -11,19 +11,4 @@
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px 0px;
-}
-
-.message {
-    width: 50%;
-    border: 1px solid #CCC;
-}
-
-.pagination-container
-{
-    width: 100%;
-    text-align: center;
-}
-
-.message td {
-    padding: 10px;
 }
